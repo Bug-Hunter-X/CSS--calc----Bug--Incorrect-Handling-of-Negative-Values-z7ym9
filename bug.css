@@ -1,0 +1,9 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, there is a lesser-known bug that can occur when using `calc()` with percentages and other units.  If the calculation results in a negative value, some browsers may handle it incorrectly, leading to unexpected layout issues. For example, consider the following code:
+
+```css
+.element {
+  width: calc(50% - 200px);
+}
+```
+
+If the parent element's width is less than 400px, `calc(50% - 200px)` will result in a negative value.  Some browsers might interpret this as `0` instead of the actual negative value, causing the element to not display correctly.
