@@ -1,0 +1,9 @@
+To work around this issue, use `max()` to ensure that the calculated value is never negative:
+
+```css
+.element {
+  width: max(0, calc(50% - 200px));
+}
+```
+
+This ensures that if the calculation results in a negative value, the width will be set to 0 instead, preventing unexpected layout behavior.  Alternatively, you can adjust your layout or calculations to avoid the possibility of negative values altogether.
